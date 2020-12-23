@@ -1,21 +1,22 @@
 package co.com.arbusta.capacitacion.autoScreenplayCucumber.questions;
 
 import co.com.arbusta.capacitacion.autoScreenplayCucumber.userinterfaces.categoryAutomationPractice;
+import co.com.arbusta.capacitacion.autoScreenplayCucumber.userinterfaces.loginUserInterfaces;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import net.thucydides.core.annotations.Step;
 
+public class Ingreso implements Question<Boolean> {
 
-public class Validar implements Question<Boolean>{
-	
-	@Step ("{0} validar pagina de comparacion")
+	@Step ("{0} Imgresa a la pagina de forma exitosa")
 	public Boolean answeredBy(Actor actor) {
 		
-		return Text.of(categoryAutomationPractice.TITULO_COMPARACIONES).viewedBy(actor).asBoolean();
+		//.isEnabled
+		return Text.of(loginUserInterfaces.BTN_SingOut).viewedBy(actor).asBoolean();
 	}
-	public static Validar significadoPalabra() {
-		return new Validar();
+	public static Ingreso Exitoso() {
+		return new Ingreso();
 	}
 	
 	
